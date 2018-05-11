@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ivy.ivyapp.activities.MainActivity">
+    tools:context="com.ivy.ivyapp.modules.doubanmovies.activities.DoubanMovieMainActivity">
 
     <FrameLayout
-        android:id="@+id/fl_app_main"
+        android:id="@+id/fl_douban_movie_main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

@@ -18,6 +18,15 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
 
+
+        </activity>
+
+
+        <!--豆瓣电影begin-->
+        <activity
+            android:name=".modules.doubanmovies.activities.DoubanMovieMainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -25,6 +34,9 @@
             </intent-filter>
 
         </activity>
+        >
+        <!--豆瓣电影end-->
+
     </application>
 
 </manifest>

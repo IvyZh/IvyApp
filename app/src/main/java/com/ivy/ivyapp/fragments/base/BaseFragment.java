@@ -32,8 +32,11 @@ public abstract class BaseFragment extends Fragment {
 
         mFragmentRootView = inflater.inflate(getContentView(), null);
         ButterKnife.bind(this, mFragmentRootView);
+        initView();
         return mFragmentRootView;
     }
+
+    protected abstract void initView();
 
     protected abstract int getContentView();
 
@@ -41,6 +44,10 @@ public abstract class BaseFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         L.d(getClass().getSimpleName() + " onActivityCreated");
+        loadData();
+    }
+
+    protected void loadData() {
     }
 
 }

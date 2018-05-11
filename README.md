@@ -1,8 +1,17 @@
 # IvyApp
-First Commit.
+
+### 2018.05.12
+
+**1.搭建豆瓣电影框架**
+
+ViewPager 自动销毁重建问题
+
+
 
 
 ### 2018.05.11
+
+First Commit.
 
 **1. build.gradle（Module:app）**
 

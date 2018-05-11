@@ -4,7 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="color_white">#FFFF</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_green">#00FF00</color>
+    <color name="color_blue">#0000FF</color>
+    <color name="color_red">#FF0000</color>
 
     <!--AHBottomNavigation-->
     <color name="color_tab_1">#455C65</color>
@@ -14,4 +17,11 @@
     <color name="color_tab_5">#F63D2B</color>
     <color name="color_notification_back">#ffcd33</color>
     <color name="color_notification_text">#3E4757</color>
+
+
+
+    豆瓣电影
+    <color name="color_douban_movie_bg">#494949</color>
+    <color name="color_douban_tab_uncheck">#747474</color>
+
 </resources>

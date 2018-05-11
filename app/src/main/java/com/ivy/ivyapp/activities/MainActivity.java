@@ -3,7 +3,6 @@ package com.ivy.ivyapp.activities;
 import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.TextView;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -38,11 +37,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        initBottomNavition();
+        initBottomNavigation();
         initFragments();
     }
 
-    private void initBottomNavition() {
+    private void initBottomNavigation() {
         // Create items
         AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.mipmap.ic_maps_place, R.color.color_tab_2);
         AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.mipmap.ic_maps_local_bar, R.color.color_tab_2);
@@ -131,7 +130,7 @@ public class MainActivity extends BaseActivity {
         mFragmentList.add(new O4Fragment());
         mFragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        transaction.add(R.id.fl_main, mFragmentList.get(mCurrPos)).commit();
+        transaction.add(R.id.fl_app_main, mFragmentList.get(mCurrPos)).commit();
     }
 
 
@@ -143,7 +142,7 @@ public class MainActivity extends BaseActivity {
             if (to.isAdded()) {//已经有了
                 mFragmentManager.beginTransaction().hide(from).show(to).commit();
             } else {//第一次加进来
-                mFragmentManager.beginTransaction().hide(from).add(R.id.fl_main, to).commit();
+                mFragmentManager.beginTransaction().hide(from).add(R.id.fl_app_main, to).commit();
             }
         }
     }

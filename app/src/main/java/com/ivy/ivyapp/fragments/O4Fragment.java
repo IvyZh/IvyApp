@@ -9,6 +9,11 @@ import com.ivy.ivyapp.fragments.base.BaseFragment;
 
 public class O4Fragment extends BaseFragment {
     @Override
+    protected void initView() {
+
+    }
+
+    @Override
     protected int getContentView() {
         return R.layout.fragment_o4;
     }

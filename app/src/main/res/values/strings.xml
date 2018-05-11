@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">CoolApp</string>
-    <string name="tab_1">name1</string>
+    <string name="tab_1">项目</string>
     <string name="tab_2">name2</string>
     <string name="tab_3">name3</string>
     <string name="tab_4">name4</string>
+
+
+    <!--豆瓣电影-->
+    <string name="tab_hot">热映</string>
+    <string name="tab_exolore">找片</string>
+    <string name="tab_mine">我的</string>
+
 </resources>
