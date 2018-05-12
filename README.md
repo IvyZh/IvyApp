@@ -124,6 +124,8 @@ First Commit.
 	 //设置全屏
 	getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+[注，2018.05.13]看到另外一种设置全屏的方法，只要设置theme就可以了，而不用在代码设置FLAG_FULLSCREEN这个了。
+
 
 **ANDROID FRAMENT的切换（解决REPLACE的低效）**
 
