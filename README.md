@@ -39,6 +39,15 @@
 测试结果：OK！
 
 
+**字体修改的assets文件夹不能手动创建--**
+
+    Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/FONT.TTF");
+    mTvProtocol.setTypeface(typeface);
+
+参考：http://code2care.org/pages/android-studio-native-typeface-cannot-be-made-error/
+
+
+
 
 
 

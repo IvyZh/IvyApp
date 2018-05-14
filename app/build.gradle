@@ -20,6 +20,9 @@ android {
     }
     sourceSets {
         main.jniLibs.srcDirs = ['libs']
+//        main {
+//            assets.srcDirs = ['assets']
+//        }
     }
     // 网上
 //    dexOptions {

@@ -1,5 +1,6 @@
 package com.ivy.ivyapp.activities;
 
+import android.graphics.Typeface;
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
@@ -48,6 +49,10 @@ public class LoginActivity extends AbstractLoginAndRegisterActivity {
         mEtUserName.addTextChangedListener(this);
         mEtPwd.addTextChangedListener(this);
         checkEditTextStatus();
+
+//        Typeface typeface = Typeface.createFromAsset(getAssets(), "/fonts/FONT.TTF");
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/FONT.TTF");
+        mTvProtocol.setTypeface(typeface);
     }
 
 

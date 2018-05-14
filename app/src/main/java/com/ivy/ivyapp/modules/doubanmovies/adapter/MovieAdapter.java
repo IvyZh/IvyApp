@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.ivy.commonlibrary.image.ImageLoaderManager;
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.modules.doubanmovies.domain.MoviesListData;
 
@@ -68,6 +69,7 @@ public class MovieAdapter extends BaseAdapter {
         holder.mRbRating.setMax(bean.getRating().getMax() * 10);
         holder.mRbRating.setProgress((int) (bean.getRating().getAverage() * 10.0));
         holder.mTvRating.setText(bean.getRating().getAverage() + "");
+        ImageLoaderManager.getInstance(mContext).displayImage(holder.mIvCover, bean.getImages().getSmall());
         return convertView;
     }
 
