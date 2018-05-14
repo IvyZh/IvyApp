@@ -5,6 +5,9 @@ import android.content.Context;
 import android.os.Handler;
 
 import com.ivy.commonlibrary.utils.L;
+import com.ivy.ivyapp.constant.Constant;
+
+import cn.bmob.v3.Bmob;
 
 /**
  * Created by Ivy on 2018/5/11.
@@ -18,11 +21,13 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        L.d("MyApplication onCreate");
         mApp = this;
         handler = new Handler();
         mainTid = android.os.Process.myTid();
-//        Logger.addLogAdapter(new AndroidLogAdapter());
-        L.d("MyApplication onCreate");
+
+        //init
+        Bmob.initialize(this, Constant.BmobAppKey);
     }
 
     public static Context getContext() {

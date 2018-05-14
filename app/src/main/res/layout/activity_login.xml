@@ -12,11 +12,11 @@
         android:text="登录"/>
 
     <EditText
-        android:id="@+id/et_mail"
+        android:id="@+id/et_username"
         style="@style/et_style"
-        android:hint="请输入邮箱"
-        android:inputType="textEmailAddress"
-        android:text="z4@163.com"
+        android:hint="请输入用户名"
+        android:maxLength="10"
+        android:text="z1"
         />
 
     <EditText

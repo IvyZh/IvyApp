@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
+import com.ivy.commonlibrary.utils.L;
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
 

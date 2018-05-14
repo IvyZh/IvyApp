@@ -20,8 +20,8 @@ import butterknife.OnClick;
 
 public class LoginActivity extends AbstractLoginAndRegisterActivity {
 
-    @BindView(R.id.et_mail)
-    EditText mEtMail;
+    @BindView(R.id.et_username)
+    EditText mEtUserName;
     @BindView(R.id.et_pwd)
     EditText mEtPwd;
     @BindView(R.id.tv_forget_pwd)
@@ -45,7 +45,7 @@ public class LoginActivity extends AbstractLoginAndRegisterActivity {
         mTvRegister.setText(Html.fromHtml(loginStr.toString()));
         String protocolStr = "<font color=\"#C4C4C4\">" + "注册/登录即代表同意</font>" + "<font color=\"#000000\">" + "《ChatDemo用户协议》</font>";
         mTvProtocol.setText(Html.fromHtml(protocolStr.toString()));
-        mEtMail.addTextChangedListener(this);
+        mEtUserName.addTextChangedListener(this);
         mEtPwd.addTextChangedListener(this);
         checkEditTextStatus();
     }
@@ -59,9 +59,9 @@ public class LoginActivity extends AbstractLoginAndRegisterActivity {
                 break;
             case R.id.bt_login:
                 L.v("login");
-                String email = mEtMail.getText().toString().trim();
+                String username = mEtUserName.getText().toString().trim();
                 String pwd = mEtPwd.getText().toString().trim();
-                login(email, pwd);
+                login(username, pwd);
                 break;
             case R.id.tv_register:
                 enterActivityFinishWithNoParams(RegisterActivity.class);
@@ -75,9 +75,9 @@ public class LoginActivity extends AbstractLoginAndRegisterActivity {
 
     @Override
     protected void checkEditTextStatus() {
-        String email = mEtMail.getText().toString().trim();
+        String password = mEtUserName.getText().toString().trim();
         String pwd = mEtPwd.getText().toString().trim();
-        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(pwd)) {
+        if (TextUtils.isEmpty(password) || TextUtils.isEmpty(pwd)) {
             mBtLogin.setTextColor(UIUtils.getColor(R.color.color_white));
             mBtLogin.setClickable(false);
         } else {
