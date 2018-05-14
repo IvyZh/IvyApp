@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.ivy.commonlibrary.image.ImageLoaderManager;
+import com.ivy.commonlibrary.image.uil.ImageLoaderManager;
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.modules.doubanmovies.domain.MoviesListData;
 
