@@ -54,6 +54,11 @@
         </activity>
         <!--豆瓣电影end-->
 
+     <!--   <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />-->
+
+
     </application>
 
 </manifest>

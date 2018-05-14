@@ -46,8 +46,9 @@
 
 参考：http://code2care.org/pages/android-studio-native-typeface-cannot-be-made-error/
 
+**解决Android dependency 'com.android.support:appcompat-v7' has different version for the compile (26.1...--**
 
-
+参考：https://www.jianshu.com/p/fbc2996192c9
 
 
 

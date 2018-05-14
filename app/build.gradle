@@ -18,6 +18,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    configurations.all {
+        resolutionStrategy.force 'com.android.support:support-fragment:26.1.0'
+    }
+
     sourceSets {
         main.jniLibs.srcDirs = ['libs']
 //        main {
