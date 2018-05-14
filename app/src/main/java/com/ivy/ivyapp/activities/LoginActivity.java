@@ -61,7 +61,8 @@ public class LoginActivity extends AbstractLoginAndRegisterActivity {
                 L.v("login");
                 String username = mEtUserName.getText().toString().trim();
                 String pwd = mEtPwd.getText().toString().trim();
-                login(username, pwd);
+                enterActivityFinishWithNoParams(MainActivity.class);
+                //login(username, pwd);
                 break;
             case R.id.tv_register:
                 enterActivityFinishWithNoParams(RegisterActivity.class);

@@ -69,6 +69,7 @@ public abstract class AbstractLoginAndRegisterActivity extends BaseActivity impl
             public void done(User user, BmobException e) {
                 if (e == null) {
                     L.v("登录成功:" + user);
+                    UIUtils.showToast("登录成功");
                     enterActivityFinishWithNoParams(MainActivity.class);
                 } else {
                     L.v("登录失败:" + e.toString());

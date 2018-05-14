@@ -4,8 +4,10 @@ import com.ivy.commonlibrary.net.okhttp3.cookie.SimpleCookieJar;
 import com.ivy.commonlibrary.net.okhttp3.https.HttpsUtils;
 import com.ivy.commonlibrary.net.okhttp3.response.CommonHandleResonseData;
 import com.ivy.commonlibrary.net.okhttp3.response.CommonJsonCallback;
+import com.ivy.commonlibrary.utils.L;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.HostnameVerifier;
@@ -48,6 +50,8 @@ public class CommonOkHttpClient {
             }
         });
 
+        okHttpClientBuilder.addInterceptor(new LogInterceptor());
+
         okHttpClientBuilder.cookieJar(new SimpleCookieJar());
         okHttpClientBuilder.connectTimeout(TIME_OUT, TimeUnit.SECONDS);
         okHttpClientBuilder.readTimeout(TIME_OUT, TimeUnit.SECONDS);
@@ -59,6 +63,26 @@ public class CommonOkHttpClient {
         okHttpClientBuilder.sslSocketFactory(HttpsUtils.initSSLSocketFactory(), HttpsUtils.initTrustManager());
         mOkHttpClient = okHttpClientBuilder.build();
     }
+
+    private static class LogInterceptor implements Interceptor {
+        @Override
+        public okhttp3.Response intercept(Chain chain) throws IOException {
+            Request request = chain.request();
+            L.v("request:" + request.toString());
+            long t1 = System.nanoTime();
+            okhttp3.Response response = chain.proceed(chain.request());
+            long t2 = System.nanoTime();
+            L.v(String.format(Locale.getDefault(), "Received response for %s in %.1fms%n%s",
+                    response.request().url(), (t2 - t1) / 1e6d, response.headers()));
+            okhttp3.MediaType mediaType = response.body().contentType();
+            String content = response.body().string();
+            L.v("response body:" + content);
+            return response.newBuilder()
+                    .body(okhttp3.ResponseBody.create(mediaType, content))
+                    .build();
+        }
+    }
+
 
     public static OkHttpClient getOkHttpClient() {
         return mOkHttpClient;

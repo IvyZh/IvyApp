@@ -39,5 +39,12 @@
     </style>
 
 
+    <!--评分控件-->
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingstars</item>
+        <item name="android:minHeight">22px</item>
+        <item name="android:maxHeight">22px</item>
+    </style>
+
 
 </resources>
