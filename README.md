@@ -1,4 +1,46 @@
-# IvyApp
+# CoolApp
+
+### 2018.05.14
+
+**引入Bbom登录的时候jar包冲突**
+
+冲突1：common_library和bmob都引用了okhttp3
+
+    compile project(':common_library')
+    compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    
+解决方案1(没解决):先不引用common_library，本项目内自测
+
+    compile('com.squareup.okhttp3:okhttp:3.10.0') {
+         exclude(module: 'okhttp3')
+     }
+     compile('cn.bmob.android:bmob-sdk:3.5.5') {
+         exclude (module: 'okhttp3')
+    }
+
+解决方案2(没解决):去掉bmob的gradle直接引用改为jar包引用
+
+    compile 'com.squareup.okhttp3:okhttp:3.10.0'
+    //compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    
+报错信息：
+    
+    Error:Error converting bytecode to dex:
+    Cause: com.android.dex.DexException: Multiple dex files define Lokio/Buffer;
+
+解决方案3(解决):删除okio-1.12.0.jar
+
+    去掉bmob的gradle直接引用改为jar包引用，
+    compile 'com.squareup.okhttp3:okhttp:3.10.0'
+    //compile 'cn.bmob.android:bmob-sdk:3.5.5'
+
+尝试去掉app.gradle中对okhttp3的引用，改为在common_library中对okhttp3的引用
+
+测试结果：OK！
+
+
+
+
 
 ### 2018.05.12
 

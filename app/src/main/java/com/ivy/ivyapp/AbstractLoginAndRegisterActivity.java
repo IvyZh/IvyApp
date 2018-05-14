@@ -6,6 +6,7 @@ import android.text.TextWatcher;
 
 import com.ivy.commonlibrary.utils.L;
 import com.ivy.commonlibrary.utils.Md5Utils;
+import com.ivy.ivyapp.activities.MainActivity;
 import com.ivy.ivyapp.activities.base.BaseActivity;
 import com.ivy.ivyapp.domain.User;
 import com.ivy.ivyapp.utils.UIUtils;
@@ -68,6 +69,7 @@ public abstract class AbstractLoginAndRegisterActivity extends BaseActivity impl
             public void done(User user, BmobException e) {
                 if (e == null) {
                     L.v("登录成功:" + user);
+                    enterActivityFinishWithNoParams(MainActivity.class);
                 } else {
                     L.v("登录失败:" + e.toString());
                     UIUtils.showToast(e.toString());

@@ -10,6 +10,7 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -17,6 +18,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main.jniLibs.srcDirs = ['libs']
+    }
+    // 网上
+//    dexOptions {
+//        incremental true
+//        preDexLibraries = false
+//        jumboMode = true
+//    }
 }
 
 dependencies {
@@ -24,16 +34,24 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
     //Logger
-    implementation 'com.orhanobut:logger:2.2.0'
+//    implementation 'com.orhanobut:logger:2.2.0'
     //ButterKnife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //AHBottomNavigation
     compile 'com.aurelhubert:ahbottomnavigation:2.1.0'
     // 引入自定义的包
-    implementation project(':common_library')
-    //以下SDK开发者请根据需要自行选择
-    //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
-    //3.5.5：请务必查看下面注释[1]
-    compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    compile project(':common_library')
+    //bmob-sdk
+//    compile 'com.squareup.okhttp3:okhttp:3.10.0'
+//        compile 'cn.bmob.android:bmob-sdk:3.5.5'
+
+//    compile('com.squareup.okhttp3:okhttp:3.10.0') {
+//        exclude(module: 'okhttp3')
+//    }
+//    compile('cn.bmob.android:bmob-sdk:3.5.5') {
+//        exclude (module: 'okhttp3')
+//    }
+
+    compile 'com.android.support:multidex:1.0.1'
 }
