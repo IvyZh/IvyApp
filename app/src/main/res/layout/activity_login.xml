@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_white"
+              android:orientation="vertical"
+              android:padding="@dimen/lr_margen">
+
+
+    <TextView
+        style="@style/register_label_style"
+        android:text="登录"/>
+
+    <EditText
+        android:id="@+id/et_mail"
+        style="@style/et_style"
+        android:hint="请输入邮箱"
+        android:inputType="textEmailAddress"
+        android:text="z4@163.com"
+        />
+
+    <EditText
+        android:id="@+id/et_pwd"
+        style="@style/et_style"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:text="123456"
+        />
+
+    <TextView
+        android:id="@+id/tv_forget_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:text="忘记密码？"
+        android:textColor="@color/color_22222"/>
+
+    <TextView
+        android:id="@+id/bt_login"
+        style="@style/login_btn_style"
+        android:layout_marginTop="10dp"
+        android:text="登录"/>
+
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp"
+        android:text="没有账号？立即注册"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:id="@+id/tv_protocol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="bottom|center"
+        android:text="注册/登录即代表同意《ChatDemo用户协议》"
+        android:textSize="12sp"/>
+</LinearLayout>
+

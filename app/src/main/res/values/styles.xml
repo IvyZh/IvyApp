@@ -9,5 +9,35 @@
     </style>
 
 
+    <!--输入框样式风格-->
+    <style name="et_style">
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+                <item name="android:background">@drawable/shape_edittext</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:textColorHint">@color/color_text_hint</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <!--登录按钮风格-->
+    <style name="login_btn_style" parent="et_style">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:background">@drawable/shape_btn_register</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--登陆/注册提示label-->
+    <style name="register_label_style">
+        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_22222</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+
 
 </resources>

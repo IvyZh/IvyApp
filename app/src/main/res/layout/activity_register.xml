@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical"
+              android:padding="@dimen/lr_margen">
+
+
+    <TextView
+        style="@style/register_label_style"
+        android:text="注册"
+        />
+
+    <EditText
+        android:id="@+id/et_mail"
+        style="@style/et_style"
+        android:hint="请输入邮箱"
+        android:inputType="textEmailAddress"
+        android:text="z@163.com"
+        />
+
+    <EditText
+        android:id="@+id/et_pwd"
+        style="@style/et_style"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:text="123456"
+        />
+
+    <EditText
+        android:id="@+id/et_pwd2"
+        style="@style/et_style"
+        android:hint="请确认密码"
+        android:inputType="textPassword"
+        android:text="123456"
+        />
+
+    <TextView
+        android:id="@+id/bt_register"
+        style="@style/login_btn_style"
+        android:text="完成注册"
+        />
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp"
+        android:text="已有账号，登录"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:id="@+id/tv_protocol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="bottom|center"
+        android:text="注册/登录即代表同意《ChatDemo用户协议》"
+        android:textSize="12sp"/>
+</LinearLayout>
+

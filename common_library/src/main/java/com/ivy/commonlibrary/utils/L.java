@@ -1,4 +1,4 @@
-package com.ivy.ivyapp.utils;
+package com.ivy.commonlibrary.utils;
 
 /**
  * Created by Ivy on 2018/5/11.

@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.ivy.commonlibrary.utils.L;
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.activities.base.BaseActivity;
 import com.ivy.ivyapp.fragments.O1Fragment;
@@ -13,7 +14,6 @@ import com.ivy.ivyapp.fragments.O2Fragment;
 import com.ivy.ivyapp.fragments.O3Fragment;
 import com.ivy.ivyapp.fragments.O4Fragment;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
-import com.ivy.ivyapp.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;

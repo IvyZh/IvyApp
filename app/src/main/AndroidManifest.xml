@@ -10,21 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity">
+        <activity
+            android:name=".activities.MainActivity"
+            android:launchMode="singleTask"
+            >
 
         </activity>
         <activity
             android:name=".activities.SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            >
-
-
-        </activity>
-
-
-        <!--豆瓣电影begin-->
-        <activity
-            android:name=".modules.doubanmovies.activities.DoubanMovieMainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
             <intent-filter>
@@ -34,7 +27,17 @@
             </intent-filter>
 
         </activity>
-        >
+        <activity android:name=".activities.LoginActivity"/>
+        <activity android:name=".activities.RegisterActivity"/>
+
+
+        <!--豆瓣电影begin-->
+        <activity
+            android:name=".modules.doubanmovies.activities.DoubanMovieMainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            >
+
+        </activity>
         <!--豆瓣电影end-->
 
     </application>

@@ -7,7 +7,6 @@ import android.support.v4.view.ViewPager;
 
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
-import com.ivy.ivyapp.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;

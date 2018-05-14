@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ivy.ivyapp.utils.L;
+import com.ivy.commonlibrary.utils.L;
 
 import butterknife.ButterKnife;
 

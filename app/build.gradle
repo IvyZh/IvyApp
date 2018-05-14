@@ -20,16 +20,16 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
-
     //Logger
     implementation 'com.orhanobut:logger:2.2.0'
-
     //ButterKnife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
     //AHBottomNavigation
     compile 'com.aurelhubert:ahbottomnavigation:2.1.0'
+    // 引入自定义的包
+    implementation project(':common_library')
 }

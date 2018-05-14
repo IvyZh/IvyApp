@@ -6,13 +6,13 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.ivy.commonlibrary.utils.L;
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.activities.base.BaseActivity;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
 import com.ivy.ivyapp.modules.doubanmovies.fragments.DoubanExploreFragment;
 import com.ivy.ivyapp.modules.doubanmovies.fragments.DoubanHotFragment;
 import com.ivy.ivyapp.modules.doubanmovies.fragments.DoubanMineFragment;
-import com.ivy.ivyapp.utils.L;
 import com.ivy.ivyapp.utils.UIUtils;
 
 import java.util.ArrayList;

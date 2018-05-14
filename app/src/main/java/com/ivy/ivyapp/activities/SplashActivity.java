@@ -13,7 +13,7 @@ public class SplashActivity extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == 1) {
-                enterActivityFinishWithNoParams(MainActivity.class);
+                enterActivityFinishWithNoParams(LoginActivity.class);
             }
         }
     };

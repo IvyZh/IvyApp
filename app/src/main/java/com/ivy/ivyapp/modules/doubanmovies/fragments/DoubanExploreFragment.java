@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
-import com.ivy.ivyapp.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,9 +62,8 @@ public class DoubanExploreFragment extends BaseFragment {
         mFragmentList.add(new MovieExploreFragment());
         mFragmentList.add(new TVExploreFragment());
 
-//        mFragmentManager = getSupportFragmentManager();
+//        mFragmentManager = getActivity().getSupportFragmentManager();
         mFragmentManager = getChildFragmentManager();
-//        mFragmentManager = getActivity().getChildFragmentManager();
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         transaction.add(R.id.fl_explore, mFragmentList.get(mCurrPos)).commit();
     }
