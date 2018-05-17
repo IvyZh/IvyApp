@@ -3,17 +3,15 @@
           package="com.ivy.ivyapp">
 
     <!--允许联网 -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!--获取GSM（2g）、WCDMA（联通3g）等网络状态的信息  -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!--获取wifi网络状态的信息 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <!--获取sd卡写的权限，用于文件上传和下载-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!--允许读取手机状态 用于创建BmobInstallation-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
 
     <application
@@ -34,6 +32,15 @@
             android:name=".activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
+
+
+        </activity>
+        <activity android:name=".activities.LoginActivity"/>
+        <activity android:name=".activities.RegisterActivity"/>
+        <activity android:name=".modules.customui.CustomUiActivity"/>
+        <activity android:name=".modules.customui.YouKuMenuActivity"
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -41,8 +48,6 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".activities.LoginActivity"/>
-        <activity android:name=".activities.RegisterActivity"/>
 
 
         <!--豆瓣电影begin-->
@@ -54,9 +59,9 @@
         </activity>
         <!--豆瓣电影end-->
 
-     <!--   <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="${UMENG_CHANNEL_VALUE}" />-->
+        <!--   <meta-data
+               android:name="UMENG_CHANNEL"
+               android:value="${UMENG_CHANNEL_VALUE}" />-->
 
 
     </application>

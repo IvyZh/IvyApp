@@ -8,6 +8,7 @@ import android.widget.ListView;
 
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
+import com.ivy.ivyapp.modules.customui.CustomUiActivity;
 import com.ivy.ivyapp.modules.doubanmovies.activities.DoubanMovieMainActivity;
 
 import java.util.Arrays;
@@ -22,7 +23,7 @@ public class O2Fragment extends BaseFragment {
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
 
-    private String[] datas = {"A", "B", "C", "D"};
+    private String[] datas = {"自定义控件", "B", "C", "D"};
 
 
     @Override
@@ -39,8 +40,8 @@ public class O2Fragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String text = datas[position];
-                if (text.contains("豆瓣电影")) {
-                    startActivity(new Intent(getContext(), DoubanMovieMainActivity.class));
+                if (text.contains("自定义控件")) {
+                    startActivity(new Intent(getContext(), CustomUiActivity.class));
                 }
             }
         });

@@ -32,4 +32,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivity(new Intent(this, clz));
         finish();
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
+    }
 }
