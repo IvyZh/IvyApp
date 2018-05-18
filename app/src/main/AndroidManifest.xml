@@ -39,6 +39,7 @@
         <activity android:name=".activities.RegisterActivity"/>
         <activity android:name=".modules.customui.CustomUiActivity"/>
         <activity android:name=".modules.customui.YouKuMenuActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
 
             <intent-filter>
