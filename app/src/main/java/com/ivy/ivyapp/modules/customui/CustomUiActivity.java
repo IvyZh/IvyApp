@@ -26,7 +26,7 @@ public class CustomUiActivity extends BaseActivity {
 
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
-    private String[] datas = {"优酷菜单", "B", "C", "D"};
+    private String[] datas = {"优酷菜单", "轮播图广告", "C", "D"};
 
 
     @Override
