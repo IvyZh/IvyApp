@@ -2,11 +2,14 @@ package com.ivy.ivyapp.activities.base;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
+
+    protected ActionBar mActionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +17,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         preContentView();
         setContentView(getContentView());
         ButterKnife.bind(this);
+        mActionBar = getSupportActionBar();
         initView();
         loadData();
     }
