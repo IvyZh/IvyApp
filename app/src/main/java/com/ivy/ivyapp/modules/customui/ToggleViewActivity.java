@@ -2,6 +2,7 @@ package com.ivy.ivyapp.modules.customui;
 
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.activities.base.BaseActivity;
+import com.ivy.ivyapp.modules.customui.ui.ToggleView;
 import com.ivy.ivyapp.utils.UIUtils;
 
 import butterknife.BindView;

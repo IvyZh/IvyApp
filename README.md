@@ -112,7 +112,22 @@
 		String namespace = "http://schemas.android.com/apk/res/com.itheima74.toggleview";
 		int switchBackgroundResource = attrs.getAttributeResourceValue(namespace , "switch_background", -1);
 		
-		
+	
+- 包含下拉刷新功能的ListView
+
+    1. 添加了自定义的头布局
+    2. 默认让头布局隐藏setPadding.设置 -自身的高度
+    3. ListView下拉的时候, 修改paddingTop, 让头布局显示出来
+    4. 触摸动态修改头布局, 根据paddingTop.  
+        - paddingTop = 0 完全显示
+        - paddingTop < 不完全显示 -64(自身高度)完全隐藏
+        - paddingTop > 0 顶部空白
+    
+    5. 松手之后根据当前的paddingTop决定是否执行刷新
+        - paddingTop < 0 不完全显示, 恢复
+        - paddingTop >= 0 完全显示, 执行正在刷新...
+
+
 
 
 ### 2018.05.18

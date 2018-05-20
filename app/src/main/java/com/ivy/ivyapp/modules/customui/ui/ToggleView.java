@@ -1,4 +1,4 @@
-package com.ivy.ivyapp.modules.customui;
+package com.ivy.ivyapp.modules.customui.ui;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -147,7 +147,7 @@ public class ToggleView extends View {
         mOnStateChangeListener = onStateChangeListener;
     }
 
-    interface OnStateChangeListener {
+    public interface OnStateChangeListener {
         void onStateChange(boolean state);
     }
 }

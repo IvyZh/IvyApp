@@ -39,7 +39,8 @@
         <activity android:name=".modules.customui.YouKuMenuActivity"/>
         <activity android:name=".modules.customui.BannerAdActivity"/>
         <activity android:name=".modules.customui.SpinnerActivity"/>
-        <activity android:name=".modules.customui.ToggleViewActivity">
+        <activity android:name=".modules.customui.ToggleViewActivity"/>
+        <activity android:name=".modules.customui.RefreshListViewActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
