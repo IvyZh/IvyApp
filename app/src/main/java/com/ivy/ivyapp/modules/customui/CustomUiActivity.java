@@ -26,7 +26,7 @@ public class CustomUiActivity extends BaseActivity {
 
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
-    private String[] datas = {"优酷菜单", "轮播图广告", "下拉选择框", "D"};
+    private String[] datas = {"优酷菜单", "轮播图广告", "下拉选择框", "自定义开关", "D"};
 
 
     @Override
@@ -55,6 +55,8 @@ public class CustomUiActivity extends BaseActivity {
                     startActivity(new Intent(CustomUiActivity.this, BannerAdActivity.class));
                 } else if (text.contains("下拉选择框")) {
                     startActivity(new Intent(CustomUiActivity.this, SpinnerActivity.class));
+                }else if (text.contains("自定义开关")) {
+                    startActivity(new Intent(CustomUiActivity.this, ToggleViewActivity.class));
                 }
 
             }
