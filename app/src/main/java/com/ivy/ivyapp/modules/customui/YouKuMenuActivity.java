@@ -51,6 +51,8 @@ public class YouKuMenuActivity extends BaseActivity {
     @Override
     protected void initView() {
 
+        mActionBar.setTitle("优酷菜单");
+        mActionBar.setDisplayHomeAsUpEnabled(true);
 
     }
 

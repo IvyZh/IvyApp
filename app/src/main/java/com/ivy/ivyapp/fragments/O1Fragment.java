@@ -27,7 +27,7 @@ public class O1Fragment extends BaseFragment {
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
 
-    private String[] datas = {"微博国际版", "酷安", "豆瓣", "豆瓣电影 v4.5.0", "get"};
+    private String[] datas = {"微博国际版", "酷安", "豆瓣", "豆瓣电影(v4.5.0)"};
 
 
     @Override

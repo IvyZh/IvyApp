@@ -47,6 +47,7 @@ public class BannerAdActivity extends BaseActivity implements ViewPager.OnPageCh
     @Override
     protected void initView() {
         mActionBar.setTitle("轮播图广告");
+        mActionBar.setDisplayHomeAsUpEnabled(true);
         mImgIds = new int[]{R.drawable.ic_banner_ad_a, R.drawable.ic_banner_ad_b, R.drawable.ic_banner_ad_c, R.drawable.ic_banner_ad_d, R.drawable.ic_banner_ad_e};
         mAdDesc = new String[]{
                 "巩俐不低俗，我就不能低俗",

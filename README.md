@@ -1,5 +1,9 @@
 # CoolApp
 
+### 连接天天模拟器
+
+    adb connect 127.0.0.1:6555
+
 
 ### 2018.05.20
 
@@ -22,6 +26,21 @@
     4. 轮播器自动轮询, OK		
     5. 暂时还没有实现点击point跳转
 
+
+- 下拉选择框
+
+
+* Button或ImageButton等自带按钮功能的控件会抢夺所在Layout的焦点.导致其他区域点击不生效.在所在layout声明一个属性
+
+   	 	android:descendantFocusability="blocksDescendants"
+	
+* popupwindow获取焦点, 外部可点击
+
+			// 设置点击外部区域, 自动隐藏
+		popupWindow.setOutsideTouchable(true); // 外部可触摸
+		popupWindow.setBackgroundDrawable(new BitmapDrawable()); // 设置空的背景, 响应点击事件
+		
+		popupWindow.setFocusable(true); //设置可获取焦点
 
 
 ### 2018.05.18

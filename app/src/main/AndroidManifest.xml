@@ -23,32 +23,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MainActivity"
-            android:launchMode="singleTask"
-            >
-
-        </activity>
-        <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            >
-
-
-        </activity>
-        <activity android:name=".activities.LoginActivity"/>
-        <activity android:name=".activities.RegisterActivity"/>
-        <activity android:name=".modules.customui.CustomUiActivity"/>
-        <activity
-            android:name=".modules.customui.YouKuMenuActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity
-            android:name=".modules.customui.BannerAdActivity"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".activities.LoginActivity"/>
+        <activity android:name=".activities.RegisterActivity"/>
+        <activity android:name=".modules.customui.CustomUiActivity"/>
+        <activity android:name=".modules.customui.YouKuMenuActivity"/>
+        <activity android:name=".modules.customui.BannerAdActivity"/>
+        <activity android:name=".modules.customui.SpinnerActivity">
 
         </activity>
 

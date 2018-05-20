@@ -26,7 +26,7 @@ public class CustomUiActivity extends BaseActivity {
 
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
-    private String[] datas = {"优酷菜单", "轮播图广告", "C", "D"};
+    private String[] datas = {"优酷菜单", "轮播图广告", "下拉选择框", "D"};
 
 
     @Override
@@ -52,7 +52,9 @@ public class CustomUiActivity extends BaseActivity {
                 if (text.contains("优酷菜单")) {
                     startActivity(new Intent(CustomUiActivity.this, YouKuMenuActivity.class));
                 } else if (text.contains("轮播图广告")) {
-                    startActivity(new Intent(CustomUiActivity.this, YouKuMenuActivity.class));
+                    startActivity(new Intent(CustomUiActivity.this, BannerAdActivity.class));
+                } else if (text.contains("下拉选择框")) {
+                    startActivity(new Intent(CustomUiActivity.this, SpinnerActivity.class));
                 }
 
             }
