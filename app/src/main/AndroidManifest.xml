@@ -35,12 +35,16 @@
             android:launchMode="singleTask"/>
         <activity android:name=".activities.LoginActivity"/>
         <activity android:name=".activities.RegisterActivity"/>
+
+
+        <!--自定义控件begin-->
         <activity android:name=".modules.customui.CustomUiActivity"/>
         <activity android:name=".modules.customui.YouKuMenuActivity"/>
         <activity android:name=".modules.customui.BannerAdActivity"/>
         <activity android:name=".modules.customui.SpinnerActivity"/>
         <activity android:name=".modules.customui.ToggleViewActivity"/>
-        <activity android:name=".modules.customui.RefreshListViewActivity">
+        <activity android:name=".modules.customui.RefreshListViewActivity"/>
+        <activity android:name=".modules.customui.SlidingMenuActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -50,6 +54,7 @@
 
         </activity>
 
+        <!--自定义控件end-->
 
         <!--豆瓣电影begin-->
         <activity

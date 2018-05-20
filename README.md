@@ -59,6 +59,38 @@
 	  onMeasure() (指定自己的宽高, 所有子View的宽高)-> onLayout() (摆放所有子View) -> onDraw() (绘制内容)
 
 
+
+* 侧滑面板(ViewGroup)
+
+	1. 在xml布局里摆放内容. include
+	2. 在自定义ViewGroup里, 进行measure测量, layout布局
+	3. 响应用户的触摸事件
+	4. int scrollX = (int) (downX - moveX);
+	5. getScrollX()获取当前滚动到的位置
+	6. 平滑动画
+
+	//1. 开始模拟数据
+
+		scroller.startScroll(startX, 0, dx, 0, duration);
+		invalidate();// 重绘界面 -> drawChild() -> computeScroll();
+
+	//2. 在computeScroll中不断获取模拟的数值
+
+		@Override
+		public void computeScroll() {
+			super.computeScroll();
+			if(scroller.computeScrollOffset()){
+				// true, 动画还没有结束
+				// 获取当前模拟的数据, 也就是要滚动到的位置
+				int currX = scroller.getCurrX(); 
+				scrollTo(currX, 0); // 滚过去
+				
+				invalidate(); // 重绘界面
+			}
+		}
+
+
+
 ### 2. 完全自定义控件.(继承View, ViewGroup)
 
 * 1. 自定义开关  

@@ -32,4 +32,8 @@
     <color name="color_666666">#666666</color>
     <color name="color_d0d0d0">#d0d0d0</color>
 
+
+    <!--侧滑菜单-按下-->
+    <color name="bt_bg_pressed">#33ADCFD6</color>
+
 </resources>

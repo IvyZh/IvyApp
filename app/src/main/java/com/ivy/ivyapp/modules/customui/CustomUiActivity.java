@@ -26,7 +26,7 @@ public class CustomUiActivity extends BaseActivity {
 
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
-    private String[] datas = {"优酷菜单", "轮播图广告", "下拉选择框", "自定义开关", "下拉刷新ListView", "D"};
+    private String[] datas = {"优酷菜单", "轮播图广告", "下拉选择框", "自定义开关", "下拉刷新ListView", "侧滑面板"};
 
 
     @Override
@@ -59,6 +59,8 @@ public class CustomUiActivity extends BaseActivity {
                     startActivity(new Intent(CustomUiActivity.this, ToggleViewActivity.class));
                 } else if (text.contains("下拉刷新ListView")) {
                     startActivity(new Intent(CustomUiActivity.this, RefreshListViewActivity.class));
+                } else if (text.contains("侧滑面板")) {
+                    startActivity(new Intent(CustomUiActivity.this, SlidingMenuActivity.class));
                 }
 
             }
