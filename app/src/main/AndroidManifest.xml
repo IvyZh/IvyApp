@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!--允许读取手机状态 用于创建BmobInstallation-->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
 
     <application
@@ -37,6 +38,22 @@
         <activity android:name=".activities.RegisterActivity"/>
 
 
+        <!--基础-->
+        <activity android:name=".modules.basic.PermissionActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </activity>
+
+
+        <!--DN_UI-->
+        <activity android:name=".modules.dn.ui.DnUiActivity"/>
+
+
         <!--自定义控件begin-->
         <activity android:name=".modules.customui.CustomUiActivity"/>
         <activity android:name=".modules.customui.YouKuMenuActivity"/>
@@ -45,12 +62,6 @@
         <activity android:name=".modules.customui.ToggleViewActivity"/>
         <activity android:name=".modules.customui.RefreshListViewActivity"/>
         <activity android:name=".modules.customui.SlidingMenuActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
 
         </activity>
 
