@@ -8,6 +8,7 @@ import android.widget.ListView;
 
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
+import com.ivy.ivyapp.modules.basic.PermissionActivity;
 import com.ivy.ivyapp.modules.customui.CustomUiActivity;
 import com.ivy.ivyapp.modules.dn.ui.DnUiActivity;
 
@@ -23,7 +24,7 @@ public class O3Fragment extends BaseFragment {
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
 
-    private String[] datas = {"权限", "", "C", "D"};
+    private String[] datas = {"权限", "DN_UI", "C", "D"};
 
 
     @Override
@@ -41,7 +42,7 @@ public class O3Fragment extends BaseFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String text = datas[position];
                 if (text.contains("权限")) {
-                    startActivity(new Intent(getContext(), CustomUiActivity.class));
+                    startActivity(new Intent(getContext(), PermissionActivity.class));
                 } else if (text.contains("DN_UI")) {
                     startActivity(new Intent(getContext(), DnUiActivity.class));
                 }

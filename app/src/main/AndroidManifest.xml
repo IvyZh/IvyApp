@@ -27,7 +27,11 @@
             android:name=".activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
 
         </activity>
 
@@ -41,11 +45,7 @@
         <!--基础-->
         <activity android:name=".modules.basic.PermissionActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
 
         </activity>
 
