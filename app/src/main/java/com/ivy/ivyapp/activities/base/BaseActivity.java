@@ -22,6 +22,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected static final int READ_PHOTO_PERMISSION = 40002;
     protected static final int CAMERA_PERMISSION = 40003;
     protected static final int EXTERNAL_STORAGE_CAMERA_PERMISSION = 40004;
+    protected static final int CALL_PHONE_PERMISSION = 40005;
     protected ActionBar mActionBar;
 
     @Override

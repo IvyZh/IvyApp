@@ -6,6 +6,12 @@
     android:orientation="vertical"
     >
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="来源：imooc-组件化封装实战(封装在了BaseActivity)"
+        />
+
     <Button
         android:id="@+id/btn_sdcard_permission"
         android:layout_width="match_parent"
@@ -24,4 +30,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="请求相机_SdCard权限"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="来源：z240336124的专栏(反射+注解)"
+        />
+
+    <Button
+        android:id="@+id/btn_call_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打电话10086"/>
 </LinearLayout>

@@ -2,13 +2,18 @@ package com.ivy.ivyapp.modules.basic;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
+import com.ivy.commonlibrary.permission.PermissionFail;
+import com.ivy.commonlibrary.permission.PermissionHelper;
+import com.ivy.commonlibrary.permission.PermissionSucceed;
 import com.ivy.commonlibrary.utils.L;
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.activities.base.BaseActivity;
@@ -35,7 +40,7 @@ public class PermissionActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.btn_sdcard_permission, R.id.btn_photo_permission, R.id.btn_camera_permission})
+    @OnClick({R.id.btn_sdcard_permission, R.id.btn_photo_permission, R.id.btn_camera_permission, R.id.btn_call_phone})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_sdcard_permission:
@@ -64,8 +69,34 @@ public class PermissionActivity extends BaseActivity {
                     requestPermissions(CAMERA_PERMISSION, Manifest.permission.CAMERA);
                 }
                 break;
+            case R.id.btn_call_phone:
+                checkPhonePermission();
+                break;
         }
     }
+
+    /**
+     * 检查权限
+     */
+
+    private void checkPhonePermission() {
+        PermissionHelper.with(this).requestCode(CALL_PHONE_PERMISSION).requestPermissions(Manifest.permission.CALL_PHONE).request();
+    }
+
+    @PermissionSucceed(requestCode = CALL_PHONE_PERMISSION)
+    private void callPhone() {
+        String phone = "10086";
+//        Intent intent = new Intent(Intent.ACTION_CALL);
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phone));
+        startActivity(intent);
+    }
+
+    @PermissionFail(requestCode = CALL_PHONE_PERMISSION)
+    private void callPhoneFail() {
+        UIUtils.showToast("打电话权限授权失败");
+    }
+
 
     // 2. 申请权限
     private void requestPermisson() {
@@ -82,6 +113,7 @@ public class PermissionActivity extends BaseActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionHelper.requestPermissionsResult(this, requestCode, permissions);//我们甚至可以把onRequestPermissionsResult()的处理写到BaseActivity中
         if (requestCode == 0x01) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 L.v("用户授予了权限，doSomething...");
@@ -101,4 +133,8 @@ public class PermissionActivity extends BaseActivity {
             L.v("用户拒绝授权");
         }
     }
+
+    //-----------------------使用注解方式来完成权限请求和执行--------------------------------
+
+
 }
