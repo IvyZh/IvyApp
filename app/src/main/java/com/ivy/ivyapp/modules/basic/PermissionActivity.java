@@ -12,6 +12,7 @@ import android.view.View;
 import com.ivy.commonlibrary.utils.L;
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.activities.base.BaseActivity;
+import com.ivy.ivyapp.utils.UIUtils;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -39,9 +40,9 @@ public class PermissionActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.btn_sdcard_permission:
                 if (hasPermission()) {
-                    L.v("有权限,doSomething");
+                    UIUtils.showToast("有权限,doSomething");
                 } else {
-                    L.v("没有权限，请求权限");
+                    UIUtils.showToast("没有权限，请求权限");
                     requestPermisson();
                 }
 
@@ -49,17 +50,17 @@ public class PermissionActivity extends BaseActivity {
             case R.id.btn_photo_permission:
 
                 if (hasPermissions(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                    L.v("打开EXTERNAL_STORAGE_CAMERA_PERMISSION doSomething....");
+                    UIUtils.showToast("打开EXTERNAL_STORAGE_CAMERA_PERMISSION doSomething....");
                 } else {
-                    L.v("请求EXTERNAL_STORAGE_CAMERA_PERMISSION 权限....");
+                    UIUtils.showToast("请求EXTERNAL_STORAGE_CAMERA_PERMISSION 权限....");
                     requestPermissions(EXTERNAL_STORAGE_CAMERA_PERMISSION, Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 }
                 break;
             case R.id.btn_camera_permission:
                 if (hasPermissions(Manifest.permission.CAMERA)) {
-                    L.v("打开相机doSomething....");
+                    UIUtils.showToast("打开相机doSomething....");
                 } else {
-                    L.v("请求相机权限....");
+                    UIUtils.showToast("请求相机权限....");
                     requestPermissions(CAMERA_PERMISSION, Manifest.permission.CAMERA);
                 }
                 break;

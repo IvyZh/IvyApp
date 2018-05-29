@@ -24,7 +24,7 @@ public class O3Fragment extends BaseFragment {
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
 
-    private String[] datas = {"权限", "DN_UI", "C", "D"};
+    private String[] datas = {"权限", "B", "C", "D"};
 
 
     @Override
