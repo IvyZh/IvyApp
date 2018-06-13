@@ -2,6 +2,7 @@ package com.ivy.commonlibrary.net.okhttp3;
 
 import com.ivy.commonlibrary.net.okhttp3.cookie.SimpleCookieJar;
 import com.ivy.commonlibrary.net.okhttp3.https.HttpsUtils;
+import com.ivy.commonlibrary.net.okhttp3.response.CommonFileCallback;
 import com.ivy.commonlibrary.net.okhttp3.response.CommonHandleResonseData;
 import com.ivy.commonlibrary.net.okhttp3.response.CommonJsonCallback;
 import com.ivy.commonlibrary.utils.L;
@@ -105,4 +106,10 @@ public class CommonOkHttpClient {
 //        call.enqueue(new CommonFileCallback(handle));
 //        return call;
 //    }
+
+    public static Call downloadFile(Request request, CommonHandleResonseData handle) {
+        Call call = mOkHttpClient.newCall(request);
+        call.enqueue(new CommonFileCallback(handle));
+        return call;
+    }
 }

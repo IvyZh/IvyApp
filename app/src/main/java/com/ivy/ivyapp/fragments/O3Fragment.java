@@ -24,7 +24,7 @@ public class O3Fragment extends BaseFragment {
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
 
-    private String[] datas = {"权限", "B", "C", "D"};
+    private String[] datas = {"权限", "算法", "C", "D"};
 
 
     @Override
@@ -43,7 +43,7 @@ public class O3Fragment extends BaseFragment {
                 String text = datas[position];
                 if (text.contains("权限")) {
                     startActivity(new Intent(getContext(), PermissionActivity.class));
-                } else if (text.contains("DN_UI")) {
+                } else if (text.contains("算法")) {
                     startActivity(new Intent(getContext(), DnUiActivity.class));
                 }
             }
