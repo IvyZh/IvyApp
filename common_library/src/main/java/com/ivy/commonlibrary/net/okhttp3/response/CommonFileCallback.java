@@ -7,6 +7,7 @@ import android.os.Message;
 
 import com.ivy.commonlibrary.net.okhttp3.exception.OkHttpException;
 import com.ivy.commonlibrary.net.okhttp3.listener.DisposeDownloadListener;
+import com.ivy.commonlibrary.utils.L;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -141,6 +142,7 @@ public class CommonFileCallback implements Callback {
         }
         if (!file.exists()) {
             try {
+                L.v("createNewFile:" + file.getAbsolutePath());
                 file.createNewFile();
             } catch (IOException e) {
                 e.printStackTrace();

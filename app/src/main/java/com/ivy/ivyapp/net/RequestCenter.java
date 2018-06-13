@@ -5,6 +5,7 @@ import android.net.Uri;
 
 import com.ivy.commonlibrary.net.okhttp3.CommonOkHttpClient;
 import com.ivy.commonlibrary.net.okhttp3.listener.CommonResponseListener;
+import com.ivy.commonlibrary.net.okhttp3.listener.DisposeDownloadListener;
 import com.ivy.commonlibrary.net.okhttp3.request.CommonRequest;
 import com.ivy.commonlibrary.net.okhttp3.request.CommonRequestParams;
 import com.ivy.commonlibrary.net.okhttp3.response.CommonHandleResonseData;
@@ -32,6 +33,11 @@ public class RequestCenter {
     public static void getInTheaters(String city, CommonResponseListener listener) {
         String url = DOUBAN_MOVIE_HOST + "/v2/movie/in_theaters?city=" + Uri.encode(city);
         get(url, null, listener, MoviesListData.class);
+    }
+
+    public static void downloadFile(String url, String path, DisposeDownloadListener listener) {
+        CommonOkHttpClient.downloadFile(CommonRequest.createGetRequest(url, null),
+                new CommonHandleResonseData(listener, path));
     }
 
 
