@@ -2,14 +2,41 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.android.library'
 //apply plugin: 'com.jakewharton.butterknife'
 
+
+def keystoreFilepath = ''
+def keystorePSW = ''
+def keystoreAlias = ''
+def keystoreAliasPSW = ''
+// default keystore file, PLZ config file path in local.properties
+def keyfile = file('s.keystore.temp')
+
+Properties properties = new Properties()
+// local.properties file in the root director
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+keystoreFilepath = properties.getProperty("keystore.path")
+
+if (keystoreFilepath) {
+    keystorePSW = properties.getProperty("keystore.password")
+    keystoreAlias = properties.getProperty("keystore.alias")
+    keystoreAliasPSW = properties.getProperty("keystore.alias_password")
+    keyfile = file(keystoreFilepath)
+}
+
+
 android {
     signingConfigs {
         pro {
-            keyAlias 'coolapp'
-            keyPassword '123456'
-            storeFile file('D:/workspace/Android/ToGithubProjects/IvyApp/coolapp.jks')
-            storePassword '123456'
+            keyAlias keystoreAlias
+            keyPassword keystoreAliasPSW
+            storeFile keyfile
+            storePassword keystorePSW
         }
+//        pro {
+//            keyAlias 'coolapp'
+//            keyPassword '123456'
+//            storeFile file('D:/workspace/Android/ToGithubProjects/IvyApp/coolapp.jks')
+//            storePassword '123456'
+//        }
         dev {
         }
     }
@@ -26,7 +53,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.pro
+            //signingConfig signingConfigs.pro
+            //签名文件存在，则签名
+            if (keyfile.exists()) {
+                println("WITH -> buildTypes -> release: using jks key")
+                signingConfig signingConfigs.pro
+            } else {
+                println("WITH -> buildTypes -> release: using default key")
+            }
         }
     }
     configurations.all {
