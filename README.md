@@ -4,6 +4,16 @@
 
     adb connect 127.0.0.1:6555
 
+### Android Studio的两种模式及签名配置
+
+文章：https://www.cnblogs.com/details-666/p/keystore.html
+
+
+key:coolapp.jks
+alias:coolapp
+pwd:123456
+
+
 
 ### 2018.05.29
 

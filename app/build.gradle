@@ -3,6 +3,16 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.jakewharton.butterknife'
 
 android {
+    signingConfigs {
+        pro {
+            keyAlias 'coolapp'
+            keyPassword '123456'
+            storeFile file('D:/workspace/Android/ToGithubProjects/IvyApp/coolapp.jks')
+            storePassword '123456'
+        }
+        dev {
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.ivy.ivyapp"
@@ -16,12 +26,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.pro
         }
     }
     configurations.all {
         resolutionStrategy.force 'com.android.support:support-fragment:26.1.0'
     }
-
     sourceSets {
         main.jniLibs.srcDirs = ['libs']
 //        main {
@@ -41,7 +51,7 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
     //Logger
-//    implementation 'com.orhanobut:logger:2.2.0'
+    //    implementation 'com.orhanobut:logger:2.2.0'
     //ButterKnife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
@@ -50,15 +60,13 @@ dependencies {
     // 引入自定义的包
     compile project(':common_library')
     //bmob-sdk
-//    compile 'com.squareup.okhttp3:okhttp:3.10.0'
-//        compile 'cn.bmob.android:bmob-sdk:3.5.5'
-
-//    compile('com.squareup.okhttp3:okhttp:3.10.0') {
-//        exclude(module: 'okhttp3')
-//    }
-//    compile('cn.bmob.android:bmob-sdk:3.5.5') {
-//        exclude (module: 'okhttp3')
-//    }
-
+    //    compile 'com.squareup.okhttp3:okhttp:3.10.0'
+    //        compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    //    compile('com.squareup.okhttp3:okhttp:3.10.0') {
+    //        exclude(module: 'okhttp3')
+    //    }
+    //    compile('cn.bmob.android:bmob-sdk:3.5.5') {
+    //        exclude (module: 'okhttp3')
+    //    }
     compile 'com.android.support:multidex:1.0.1'
 }
