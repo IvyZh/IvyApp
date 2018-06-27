@@ -27,6 +27,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="meta_data_in_application"
+            android:value="放在Application标签下面的meta-data"
+            />
+
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
@@ -41,15 +47,30 @@
 
         <activity
             android:name=".activities.MainActivity"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask">
+            <meta-data
+                android:name="meta_data_in_mainactivity"
+                android:value="MainActivity-meta-data"
+                />
+
+        </activity>
         <activity android:name=".activities.LoginActivity"/>
         <activity android:name=".activities.RegisterActivity"/>
 
 
         <!--基础-->
         <activity android:name=".modules.basic.PermissionActivity">
+            <meta-data
+                android:name="meta_data_in_permissionactivity"
+                android:value="PermissionActivity-meta-data"
+                />
 
-
+        </activity>
+        <activity android:name=".modules.basic.MetaDataActivity">
+            <meta-data
+                android:name="meta_data_in_metaactivity"
+                android:value="MetaDataActivity-meta-data"
+                />
 
         </activity>
 

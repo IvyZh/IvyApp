@@ -13,6 +13,7 @@ import com.ivy.commonlibrary.net.okhttp3.listener.DisposeDownloadListener;
 import com.ivy.commonlibrary.utils.L;
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
+import com.ivy.ivyapp.modules.basic.MetaDataActivity;
 import com.ivy.ivyapp.modules.basic.PermissionActivity;
 import com.ivy.ivyapp.modules.customui.CustomUiActivity;
 import com.ivy.ivyapp.modules.dn.ui.DnUiActivity;
@@ -34,7 +35,7 @@ public class O3Fragment extends BaseFragment {
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
 
-    private String[] datas = {"权限", "算法", "下载演示", "D"};
+    private String[] datas = {"权限", "算法", "下载演示", "读取meta-data"};
 
 
     @Override
@@ -57,6 +58,8 @@ public class O3Fragment extends BaseFragment {
                     startActivity(new Intent(getContext(), DnUiActivity.class));
                 } else if (text.contains("下载演示")) {
                     download();
+                } else if (text.contains("读取meta-data")) {
+                    startActivity(new Intent(getContext(), MetaDataActivity.class));
                 }
             }
         });
