@@ -13,6 +13,8 @@ import com.ivy.commonlibrary.net.okhttp3.listener.DisposeDownloadListener;
 import com.ivy.commonlibrary.utils.L;
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
+import com.ivy.ivyapp.modules.basic.FingerActivity;
+import com.ivy.ivyapp.modules.basic.IDCardActivity;
 import com.ivy.ivyapp.modules.basic.MetaDataActivity;
 import com.ivy.ivyapp.modules.basic.PermissionActivity;
 import com.ivy.ivyapp.modules.customui.CustomUiActivity;
@@ -35,7 +37,9 @@ public class O3Fragment extends BaseFragment {
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
 
-    private String[] datas = {"权限", "算法", "下载演示", "读取meta-data"};
+    private String[] datas = {"权限", "算法", "下载演示", "读取meta-data", "自定义身份证相机", "指纹识别",
+            "", "", "", "", "", "", "", ""
+    };
 
 
     @Override
@@ -60,6 +64,10 @@ public class O3Fragment extends BaseFragment {
                     download();
                 } else if (text.contains("读取meta-data")) {
                     startActivity(new Intent(getContext(), MetaDataActivity.class));
+                } else if (text.contains("自定义身份证相机")) {
+                    startActivity(new Intent(getContext(), IDCardActivity.class));
+                }else if (text.contains("指纹识别")) {
+                    startActivity(new Intent(getContext(), FingerActivity.class));
                 }
             }
         });

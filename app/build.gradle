@@ -103,4 +103,7 @@ dependencies {
     //        exclude (module: 'okhttp3')
     //    }
     compile 'com.android.support:multidex:1.0.1'
+
+    // IDCard
+    compile 'com.github.wildma:IDCardCamera:1.0.0'
 }

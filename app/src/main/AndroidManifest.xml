@@ -18,6 +18,7 @@
     <!--权限管理-打电话-->
     <uses-permission android:name="android.permission.CALL_PHONE"/>
 
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
 
     <application
         android:name=".app.MyApplication"
@@ -73,6 +74,12 @@
                 />
 
         </activity>
+
+        <activity android:name=".modules.basic.IDCardActivity">
+
+
+        </activity>
+        <activity android:name=".modules.basic.FingerActivity"/>
 
 
         <!--DN_UI-->
