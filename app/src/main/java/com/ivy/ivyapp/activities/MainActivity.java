@@ -1,8 +1,11 @@
 package com.ivy.ivyapp.activities;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+import android.view.WindowManager;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -14,6 +17,7 @@ import com.ivy.ivyapp.fragments.O2Fragment;
 import com.ivy.ivyapp.fragments.O3Fragment;
 import com.ivy.ivyapp.fragments.O4Fragment;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
+import com.ivy.ivyapp.utils.StatusBarUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,15 +34,24 @@ public class MainActivity extends BaseActivity {
     private BaseFragment mCurrentFragment;
     private List<BaseFragment> mFragmentList = new ArrayList<BaseFragment>();
 
+    protected boolean useThemestatusBarColor = false;//是否使用特殊的标题栏背景颜色，android5.0以上可以设置状态栏背景色，如果不使用则使用透明色值
+    protected boolean useStatusBarColor = true;//是否使用状态栏文字和图标为暗色，如果状态栏采用了白色系，则需要使状态栏和图标为暗色，android6.0以上可以设置
+
+
     @Override
     protected int getContentView() {
+        //StatusBarUtils.getStatusBarHeight(this);
         return R.layout.activity_main;
     }
 
     @Override
     protected void initView() {
+        mActionBar.hide();
         initBottomNavigation();
         initFragments();
+        //StatusBarUtils.setStatusTextColor(true, this);
+        StatusBarUtils.setStatusBar(this, false, false);
+        StatusBarUtils.setStatusTextColor(true, MainActivity.this);
     }
 
     private void initBottomNavigation() {
@@ -111,6 +124,13 @@ public class MainActivity extends BaseActivity {
                 L.v("setOnTabSelectedListener:" + position + ",wasSelected:" + wasSelected);
                 if (!wasSelected) {
                     switchFragment(mFragmentList.get(position), position);
+                    if (position == 0) {
+                        StatusBarUtils.setStatusTextColor(true, MainActivity.this);
+                    } else if (position == 1) {
+                        StatusBarUtils.setStatusTextColor(true, MainActivity.this);
+                    } else if (position == 2) {
+                        StatusBarUtils.setStatusTextColor(false, MainActivity.this);
+                    }
                 }
                 return true;
             }
@@ -146,4 +166,6 @@ public class MainActivity extends BaseActivity {
             }
         }
     }
+
+
 }

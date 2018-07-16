@@ -40,7 +40,7 @@ public class FingerActivity extends BaseActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             mFingerprintManager = getSystemService(FingerprintManager.class);
             L.v("isHardwareDetected：" + mFingerprintManager.isHardwareDetected());
-            L.v("isHardwareDetected：" + mFingerprintManager.hasEnrolledFingerprints());
+            L.v("hasEnrolledFingerprints：" + mFingerprintManager.hasEnrolledFingerprints());
 
             if (mFingerprintManager.isHardwareDetected() && mFingerprintManager.hasEnrolledFingerprints()) {
                 if (mFingerprintManager != null) {
