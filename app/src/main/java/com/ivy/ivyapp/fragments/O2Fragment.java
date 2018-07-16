@@ -4,13 +4,14 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.ivy.ivyapp.R;
 import com.ivy.ivyapp.fragments.base.BaseFragment;
 import com.ivy.ivyapp.modules.customui.CustomUiActivity;
 import com.ivy.ivyapp.modules.dn.ui.DnUiActivity;
-import com.ivy.ivyapp.modules.doubanmovies.activities.DoubanMovieMainActivity;
+import com.ivy.ivyapp.utils.StatusBarUtils;
 
 import java.util.Arrays;
 
@@ -23,6 +24,9 @@ import butterknife.BindView;
 public class O2Fragment extends BaseFragment {
     @BindView(R.id.lv_datas)
     ListView mLvDatas;
+
+    @BindView(R.id.ll_bar)
+    LinearLayout llBar;
 
     private String[] datas = {"自定义控件", "DN_UI", "C", "D"};
 
@@ -48,11 +52,25 @@ public class O2Fragment extends BaseFragment {
                 }
             }
         });
+        initState();
     }
 
 
     @Override
     protected void loadData() {
 
+    }
+
+    /**
+     * 动态的设置状态栏  实现沉浸式状态栏
+     */
+    private void initState() {
+        llBar.setVisibility(View.VISIBLE);
+        //获取到状态栏的高度
+        int statusHeight = StatusBarUtils.getStatusBarHeight(getActivity());
+        //动态的设置隐藏布局的高度
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llBar.getLayoutParams();
+        params.height = statusHeight;
+        llBar.setLayoutParams(params);
     }
 }
